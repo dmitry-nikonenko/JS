@@ -303,7 +303,41 @@
   Если мест нигде нет, показать alert с сообщением 'Извините, столько мест нет ни в одной группе!'
 */
 
-//  
+//  const sharm = 15;
+const hurgada = 25;
+const taba = 6;
+let confirmation;
+let hotel = prompt('Enter a number of vacant places');
+
+if (hotel < 0 || hotel % 1 !== 0) {
+   alert('Ошибка ввода')
+} else if (hotel === null) {
+   alert('Нам очень жаль, приходите еще!')
+
+} else if (hotel <= 6) {
+   confirmation = confirm('There is a vacant place for you in Taba')
+   if (confirmation) {
+       alert('Bon voyage in Taba')
+   } else {
+       alert('Извините, столько мест нет ни в одной группе!')
+   }
+} else if (hotel >= 7 && hotel <= 15) {
+   confirmation = confirm('There is a vacant place for you in Sharm')
+   if (confirmation) {
+       alert('Bon voyage in Sharm')
+   } else {
+       alert('Извините, столько мест нет ни в одной группе!')
+   }
+} else if (hotel >= 16 && hotel <= 25) {
+   confirmation = confirm('There is a vacant place for you in Hurgada')
+   if (confirmation) {
+       alert('Bon voyage in Hurgada')
+   } else {
+       alert('Извините, столько мест нет ни в одной группе!')
+   }
+} else{
+   alert('Извините, столько мест нет ни в одной группе!')
+}
 
 
 
