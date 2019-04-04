@@ -261,6 +261,19 @@
 */
 
 // const numbers = [12, 15, 25, 37, 41, 62, 74, 83];
+// let min = numbers[0];
+// let max = numbers[numbers.length -1];
+// let s
+
+
+// do{
+//     let s = Number(prompt(`Сыграем в игру... введи в консольку числа от ${min} от ${max}`));
+//     if(s === 0){alert('не уходи брат!!!!'); break;}
+//     else if(numbers.includes(s)){alert('ок')}else {alert('нет')}
+    
+// } while(s !== 0 )
+
+//
 
 
 //============================= task 17 ===================================
