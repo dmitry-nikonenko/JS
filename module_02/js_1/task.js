@@ -109,7 +109,7 @@
 // const logout = prompt('lets go ...')
 // const game = ["камень", 'ножницы', "бумага"];
 // let index = Math.floor(Math.random()*game.length);
-// let random = game[index];
+//    
 // console.log(random);
 // if(logout === "камень" && random === "камень"){alert('ничья')
 // }else if (logout === "камень" && random === "бумага")
@@ -143,3 +143,18 @@
 // let u = d.join(' ')
 
 // console.log(u)
+
+
+
+
+
+// 1) Запитати логін
+// 2) Перевірити чи існує логін в базі
+// 3) Якщо логін існує вивести алерт ("Такий логін вже існує")
+// 4) Якщо логін не існує вивести алерт ("Вітаємо")
+
+// let logins = ['rew', 'qwewwe', 'apple', 'js', 'row', 'col']
+// let a;
+
+// a = prompt('password please')
+// if(logins.includes(a)){alert('Такий логін вже існує')}else{alert('Вітаємо')}
