@@ -129,13 +129,13 @@
 * Цикл должен выводить сообщения до тех пор, пока не закончатся элементы массива
 */
 
-const mass = ["Mango", "Poly", "Ajax", "Lux", "Jay", "Kong"];
-let a = 0;
+// const mass = ["Mango", "Poly", "Ajax", "Lux", "Jay", "Kong"];
+// let a = 0;
 
-for(let key of mass){
-        if(key.length>0){ a += 1;}
-        console.log(a,key)
-        }
+// for(let key of mass){
+//         if(key.length>0){ a += 1;}
+//         console.log(a,key)
+//         }
 
 
 
@@ -159,7 +159,16 @@ for(let key of mass){
 // Используя цикл вычисли сколько будет стоить гравировка и запиши результат в переменную price
 // console.log(price); // 80
 
-
+// const message = "Proin sociis natoque et magnis parturient montes mus";
+// let price = 0;
+// let words = message.split (' ')
+// console.log(words)
+// let s = words.length
+// console.log(s)
+// for(let i = 0; i<words.length; i ++){
+//         price += 10;
+//     }
+// console.log(price);
 //============================= task 13 ============================
 
 /*
@@ -175,6 +184,12 @@ for(let key of mass){
   
   PS: используй бесконечный цикл с прерыванием
 */
+
+// let num;
+// do{
+//     num = Number(prompt("угадай число, получи бананчик")); 
+//     if ( num > 100){alert ('Ты мой сладенький')} else if(num <= 100) {alert('попробуй еще раз')}
+// } while(num !== 0 && num <= 100)
 
 
 //============================= task 14 ===============================
@@ -193,9 +208,10 @@ for(let key of mass){
 // const numbers = [1, 3, 17, 5, 9, 14, 8, 14, 34, 18, 26];
 // const num = 10;
 // const matched = [];
-
-// console.log(matched); // [17, 14, 14, 32, 18, 26]
-
+//  for(let key of numbers){
+//     if(key>10){matched.push(key)}
+//     }
+// console.log(matched); 
 
 //==================== task 15 ===============================================
 
@@ -206,9 +222,18 @@ for(let key of mass){
 */
 
 // const message = "May the force be with you";
-// let longestWord;
+// let longestWord = 0;
+// let s = message.split(' ')
+// let word
 
-// console.log(longestWord); // 'force'
+// for(let i = 0; i<s.length; i += 1){
+//             if(s[i].length>longestWord){
+//                 longestWord=s[i].length
+//                 word=s[i]
+//             }}
+// console.log(longestWord)
+// console.log(word)
+        
 
 
 //================== task 16 ===============================================
