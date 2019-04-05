@@ -28,20 +28,58 @@
 
 // // Дана строка, например, '123456'. Сделайте из нее '214365'.
 
+// let number = '123456';
+// let strin = number.split('');
 
+// for (let i = 0; i < strin.length; i++) {
 
+//    if (i % 2 !== 0) {
+
+//        let b = strin[i - 1];
+//        strin[i - 1] = strin[i];
+//        strin[i] = b;
+//    }
+// }
+// console.log(strin);
 
 // //=============================== task 04 =======================
 
 // //Сделайте функцию isNumberInRange, которая параметром принимает число и проверяет, что оно больше нуля и меньше 10. Если это так - пусть функция возвращает true, если не так - false.
 
+// function isNumberInRange (a){return 0>a>10}
+// console.log(isNumberInRange(11))
+
+
 // //=============================== task 05 =======================
 
 // // Сделайте функцию isEven() (even - это четный), которая параметром принимает целое число и проверяет: четное оно или нет. Если четное - пусть функция возвращает true, если нечетное - false.
-
+// function isEven (a){
+//     if(a % 2 === 0){alert('true')}else{alert('no true')}
+// }
+// console.log(isEven(3))
 // //=============================== task 06 =======================
 
 // // Дан массив с целыми числами. Создайте из него новый массив, где останутся лежать только четные из этих чисел. Для этого используйте вспомогательную функцию isEven из предыдущей задачи
+
+
+
+// function isEven(a) {
+//     if (a % 2 === 0) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+// console.log(isEven(12))
+
+// let str = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// let newStr = []
+// for (let i = 0; i < str.length; i++) {
+//     if (isEven(str[i])) {
+//         newStr.push(str[i])
+//     }
+// }
+// console.log(newStr)
 
 // //=============================== task 07 =======================
 
@@ -62,6 +100,12 @@
 
 // // Сделайте функцию getDivisors, которая параметром принимает число и возвращает массив его делителей (чисел, на которое делится данное число)
 
+// function getDivisors(num){
+//     let arr =[];
+//     for (let i = 1; i<=num; i++){
+//         if(num % i === 0){arr.push(i)}
+//     } return arr;
+// } alert(getDivisors(12))
 // //=============================== task 10 =======================
 
 
@@ -81,6 +125,9 @@
 
 // console.log( checkNumberType(17) ); // 'Odd'
 
+// function checkNumberType(num){
+//     if(num%2===0){alert('Even')}else{alert('Odd')}
+// } checkNumberType(3)
 
 // //=============================== task 11 =======================
 
@@ -112,6 +159,16 @@
 //   ); // вернется форматированная строка
 
 
+
+function formatString(str) {
+    mass = str.split('')
+    let mass = []
+    
+    for (let i = 1; i <= 40; i += 1){
+        if (str < 40){}
+
+        }console.log(mass);
+} 
 // //=============================== task 12 =======================
 
 
