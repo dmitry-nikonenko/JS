@@ -159,10 +159,10 @@
 //   ); // вернется форматированная строка
 
 
-
+let mass = []
 function formatString(str) {
     mass = str.split('')
-    let mass = []
+   
     
     for (let i = 1; i <= 40; i += 1){
         if (str < 40){}
