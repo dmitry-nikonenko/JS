@@ -159,16 +159,16 @@
 //   ); // вернется форматированная строка
 
 
-let mass = []
-function formatString(str) {
-    mass = str.split('')
+// let mass = []
+// function formatString(str) {
+//     mass = str.split('')
    
     
-    for (let i = 1; i <= 40; i += 1){
-        if (str < 40){}
+//     for (let i = 1; i <= 40; i += 1){
+//         if (str < 40){}
 
-        }console.log(mass);
-} 
+//         }console.log(mass);
+// } 
 // //=============================== task 12 =======================
 
 
@@ -273,7 +273,11 @@ function formatString(str) {
 // */
 
 // const uniqueNumbers  = [2, 1, 4, 9];
-
+// function addUniqueNumbers(...arg){
+//     for(let key of arg){
+//     if(!uniqueNumbers.includes(key)){uniqueNumbers.push(key)}
+// }return uniqueNumbers;
+// }
 // // Вызовы функции для проверки
 // addUniqueNumbers(1, 2, 3);
 // console.log(
@@ -290,6 +294,9 @@ function formatString(str) {
 //   uniqueNumbers
 // ); // [2, 1, 4, 9, 3, 12, 19, 5, 8]
 
+
+
+
 // //=============================== task 17 =======================
 
 // /*
@@ -304,8 +311,14 @@ function formatString(str) {
 //   ни с одним из числовых аргументов.
 // */
 
-// const filterFromArray = function(arr) {
-
+// const filterFromArray = function(arr, ...arg) {
+//  let newMass =[];
+//  for(const key of arr){
+//    if(!arg.includes(key)){
+//      newMass.push(key)
+//    }
+//  }
+//  return newMass;
 // }; 
 
 // // Вызовы функции для проверки
