@@ -84,7 +84,7 @@
     // } console.log(`${newKey}==${newWalues}`)
 
 
-//-----------------------------------Собрание в один----------------------------------------------------------
+//---------------------------------------------------------------------------------------------
 
 // const bmw = {
 //     wheels: 2,
@@ -95,7 +95,7 @@
 // const showObj = Object.assign(cars, bmw);
 // console.log(showObj)
 
-//--------------------------------------------Распиление------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------
 
 // const c = {...cars, ...bmw}
 // console.log(c)
@@ -104,3 +104,85 @@
 
 // const{wheels,doors,ego}= bmw;
 // console.log(wheels)
+
+// ----------------------------------------------------------------------------------
+
+// function fn(){return`hello ${this.name}`}
+// const itsMe ={name:"dima"}
+// itsMe.showMe = fn;
+// console.log(itsMe.showMe())
+
+
+
+                                         //----------------------------
+// const newFn = () => console.log(this);               
+// newFn()
+
+//---------------------------------------------------------------------------------------------------
+// const itsMe ={
+//     name:"dima",
+//     fn(){console.log(this)}
+// }
+// itsMe.fn();
+
+// const fnD = function(callback){
+
+
+//     callback()
+// }
+// fnD(itsMe.fn)
+
+
+//----------------------------------------------------------------------------------------------------
+
+// function DOUBLE(name,age,height){
+//     this.name = name;
+//     this.age = age;
+//     this.height = height;
+//     this.plus= function(el) { return this.age = this.age + el;}
+//     this.minus =function(){this.height-=1; console.log(this.height)
+//     }
+// }
+
+// const double = new DOUBLE ("maksim", 2 , 195);
+// double.plus(10);
+// double.minus();
+// console.log(double);
+
+// const triple = new DOUBLE ('pasha', 22,210);
+// triple.minus();
+// triple.plus(30);
+
+
+// console.log(triple)
+
+//--------------------------------------------------------------------------------------------------------
+
+
+// function SHOP(name,sell=0, change=10){
+//     this.name = name;
+//     this.sell = sell;
+//     this.change = change;
+//     this.plus = function(product) {
+        
+//         this.sell += 1;
+//         this.change -=1;
+//         return `----->${product}<-------`;
+//     }
+//       this.alarm =function(){if(this.change < 6){alert("AAAAlarm")}}
+
+// }
+
+// const margo = new SHOP('Margo')
+// margo.plus('iron');
+// margo.plus('tv');
+// margo.plus('tv');
+// margo.plus('tv');
+// margo.plus('tv');
+// margo.plus('tv');
+// margo.plus('tv');
+// margo.plus('tv');
+
+// margo.alarm()
+
+//  console.log(margo)
