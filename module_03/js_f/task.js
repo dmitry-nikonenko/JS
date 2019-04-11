@@ -332,7 +332,7 @@
 
 
 
-// //=============================== ***** task **** 18  =======================
+// //=============================== ***** task **** 18 HOME WORK =======================
 
 
 // /*
@@ -373,22 +373,41 @@
 //         используются результаты вызовов других функций - isLoginUnique и isLoginValid.
 // */
 
-// const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
+// Variables and Array
+const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
+const errorLogiValid = 'Ошибка! Логин должен быть от 4 до 16 символов';
+const addLoginInArray = 'Логин успешно добавлен!';
+const inUseLogin = 'Такой логин уже используется!';
 
-// const isLoginValid = function(login) {
-//   // код
-// };
+// Arrow Function
+const isLoginValid = login => login.length >= 4 && login.length <= 16;
 
-// const isLoginUnique = function(allLogins, login) {
-//   // код
-// };
+const isLoginUnique = (allLogins, login) => !allLogins.includes(login);
 
-// const addLogin = function(allLogins, login) {
-//   // код
-// };
 
-// // Вызовы функции для проверки
-// addLogin(logins, 'Ajax'); // 'Логин успешно добавлен!'
-// addLogin(logins, 'robotGoogles'); // 'Такой логин уже используется!'
-// addLogin(logins, 'Zod'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
-// addLogin(logins, 'jqueryisextremelyfast'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+// Function expression
+const addLogin = function (allLogins, login) {
+
+    if (!isLoginValid(login)) {
+
+        return errorLogiValid;
+
+
+    } else if (isLoginUnique(allLogins, login)) {
+
+        allLogins.push(login);
+
+        return addLoginInArray;
+
+
+    } else {
+        return inUseLogin;
+    }
+};
+
+// Вызовы функции для проверки
+console.log(addLogin(logins, 'Ajax')); // 'Логин успешно добавлен!'
+console.log(addLogin(logins, 'robotGoogles')); // 'Такой логин уже используется!'
+console.log(addLogin(logins, 'Zod')); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+console.log(addLogin(logins, 'jqueryisextremelyfast')); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+console.log('After add login in arr.logins: ', logins);
