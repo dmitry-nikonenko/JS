@@ -277,7 +277,7 @@
 
 
 
-//========================= *tasks 12 ====================
+//========================= *tasks HOMEWORK ====================
 
 /*
   Создайте скрипт турагенства, продающего поездки в 3-х группах: sharm, hurgada и taba.
@@ -303,7 +303,7 @@
   Если мест нигде нет, показать alert с сообщением 'Извините, столько мест нет ни в одной группе!'
 */
 
-//  const sharm = 15;
+ const sharm = 15;
 const hurgada = 25;
 const taba = 6;
 let confirmation;
@@ -341,7 +341,7 @@ if (hotel < 0 || hotel % 1 !== 0) {
 
 
 
-//======================== *task 13 ================
+//======================== *task 13 HOMEWORK ================
 
 /*
   Напишите скрипт имитирующий авторизацию администратора в панели управления.
@@ -366,24 +366,24 @@ if (hotel < 0 || hotel % 1 !== 0) {
 */
 
 
-// const adminLogin = 'admin';
-// const adminPassword = '123';
+const adminLogin = 'admin';
+const adminPassword = '123';
 
-// let login = prompt('Enter login');
-// if (login === null) {
-//     alert('Отменено пользователем!')
-// } else if (login !== adminLogin) {
-//     alert('Доступ запрещен, неверный логин!')
-// } else if (login === adminLogin) {
-//     let inputPassword = prompt('Enter password')
-//     if (inputPassword === null) {
-//         alert('FUCK YOU, BITCH!!!!')
-//     } else if (inputPassword === adminPassword) {
-//         alert('Добро пожаловать!');
-//     } else if (inputPassword !== adminPassword) {
-//         alert('Доступ запрещен, неверный пароль!');
-//     }
-// }
+let login = prompt('Enter login');
+if (login === null) {
+    alert('Отменено пользователем!')
+} else if (login !== adminLogin) {
+    alert('Доступ запрещен, неверный логин!')
+} else if (login === adminLogin) {
+    let inputPassword = prompt('Enter password')
+    if (inputPassword === null) {
+        alert('FUCK YOU, BITCH!!!!')
+    } else if (inputPassword === adminPassword) {
+        alert('Добро пожаловать!');
+    } else if (inputPassword !== adminPassword) {
+        alert('Доступ запрещен, неверный пароль!');
+    }
+}
 
 
 
