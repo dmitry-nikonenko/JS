@@ -323,7 +323,7 @@
 // const numbers = [12, 15, 25, 37, 41];
 
 
-//========================== ***ЗАДАНИЕ ПОВЫШЕННОЙ СЛОЖНОСТИ*** =====================
+//========================== ***ЗАДАНИЕ ПОВЫШЕННОЙ СЛОЖНОСТИ         HOMEWORK    *** =====================
 
 /*
   Написать следующий скрипт:
@@ -346,12 +346,35 @@
       в массив чисел не нужно, после чего снова пользователю предлагается ввести число в prompt.
 */
 
-// let userInput;
-// const numbers = [];
-// let total = 0;
+// {
+//   let userInput;
+//   const numbers = [];
+//   let total = 0;
+
+//   do {
+//       userInput = prompt('Введите число!');
+//       const hasNumber = Number(userInput);
+
+//       if (!userInput) {
+//           alert('Отменено пользователем!');
+//       } else if (!hasNumber) {
+//           alert('Введено не число! Попробуйте еще!');
+//       } else {
+//           numbers.push(hasNumber);
+//       }
+
+//   } while (userInput);
+
+//   for (const number of numbers) {
+
+//       total = number + total;
+//   }
+
+//   alert(`Общая сумма чисел равна ${total}`);
+// }
 
 
-//========================== ***ЗАДАНИЕ ПОВЫШЕННОЙ СЛОЖНОСТИ*** =====================
+//========================== ***ЗАДАНИЕ ПОВЫШЕННОЙ СЛОЖНОСТИ   HOMEWORK*** =====================
 
 /*
   
@@ -379,5 +402,34 @@
   Если пользователь нажмет Cancel, прекратить выполнение цикла.
 */
 
-// const passwords = ['qwerty', '111qwe', '123123', 'r4nd0mp4zzw0rd'];
-// let attempts = 3;
+// {
+//   let userInput;
+//   const passwords = ['qwerty', '111qwe', '123123', 'r4nd0mp4zzw0rd'];
+//   let attempts = 3;
+
+//   do {
+
+//       userInput = prompt('Введите пароль!');
+
+//       if (!userInput) {
+
+//           alert('Отменено пользователем!');
+
+//       } else if (!passwords.includes(userInput)) {
+//           attempts -= 1;
+
+//           alert(`Неверный пароль, у вас осталось ${attempts} попыток`);
+
+//           if (attempts === 0) {
+//               alert('У вас закончились попытки, аккаунт заблокирован!');
+
+//               break;
+//           }
+
+//       } else {
+//           alert('Добро пожаловать!');
+
+//           break;
+//       }
+//   } while (userInput);
+// }
