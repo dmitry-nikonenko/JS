@@ -261,18 +261,28 @@ class Hamburger {
    *
    * Попробуйте сделать это геттером чтобы можно было обращаться как obj.calories и нам вернет сумму.
    */
-  get calculateCalories() {
-		return (
-			Hamburger.STUFFINGS[this.stuffing].calories +
-			Hamburger.SIZES[this.size].calories +
-			this.toppings.reduce(
-				(acc, el) => acc + Hamburger.TOPPINGS[el].calories,
-				0
-			)
-		);
-	}
-}
+  // get calculateCalories() {
+	// 	return (
+	// 		Hamburger.STUFFINGS[this.stuffing].calories +
+	// 		Hamburger.SIZES[this.size].calories +
+	// 		this.toppings.reduce(
+	// 			(acc, el) => acc + Hamburger.TOPPINGS[el].calories,
+	// 			0
+	// 		)
+	// 	);
+	// }
 
+calculateCalories() {
+  
+   let ac = Hamburger.STUFFINGS[this.stuffing].calories 
+   let bc = Hamburger.SIZES[this.size].calories 
+   let cc = this.toppings.reduce((acc, el) => acc + Hamburger.TOPPINGS[el].calories,0); 
+    
+      
+  return (ac +  bc +  cc);
+    
+}
+}
 /*
   Размеры, виды добавок и начинок объявите как статические поля класса.
   Добавьте отсутсвующие поля по аналогии с примером.
@@ -336,7 +346,7 @@ const hamburger = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE)
 hamburger.addTopping(Hamburger.TOPPING_SPICE);
 
 // Спросим сколько там калорий
-console.log("Calories: ", hamburger.calculateCalories);
+console.log("Calories: ", hamburger.calculateCalories());
 
 // Сколько стоит?
 console.log("Price: ", hamburger.price);
