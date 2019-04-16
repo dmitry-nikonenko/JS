@@ -1,0 +1,21 @@
+.gallery{
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+img{
+    width: 100%;
+    opacity: 0;
+    transition:5s opacity, 5s transform;
+    position: absolute;
+    left:0;
+}
+
+.images{
+    position: relative;
+    
+}
+.showed{
+    opacity: 1;
+    transform: rotate(360deg);
+}
