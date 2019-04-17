@@ -50,28 +50,47 @@
 //     textInput.className ='salad'   
 // }
 
-let b1 = document.querySelector('.b1')
-let b2 = document.querySelector('.b2')
-let images = document.querySelectorAll('img')
+// let b1 = document.querySelector('.b1')
+// let b2 = document.querySelector('.b2')
+// let images = document.querySelectorAll('img')
 
 
 
-console.log(images[2])
-let i =0;
-b1.onclick = function(){
-    images[i].className ='';
-    i = i+1;
-    if(i>=images.length){i=0}
-    images[i].className='showed'
+// console.log(images[2])
+// let i =0;
+// b1.onclick = function(){
+//     images[i].className ='';
+//     i = i+1;
+//     if(i>=images.length){i=0}
+//     images[i].className='showed'
   
-}
+// }
 
 
-b2.onclick = function(){
-    images[i].className='';
-    i -=1
-    if(i<0){i=images.length -1}
-    images[i].className='showed'
+// b2.onclick = function(){
+//     images[i].className='';
+//     i -=1
+//     if(i<0){i=images.length -1}
+//     images[i].className='showed'
   
-}
+// }
+
+
+//-------------------------------------------------------------------------------------------------------------
+
+// let createNew = document.createElement('div');
+// let createImg=document.createElement('img');
+
+
+// createImg.setAttribute('src','https://himakesmasuhamka.files.wordpress.com/2014/10/img_4342.jpg')
+// console.log(createImg.src);
+
+// createNew.innerHTML='hello';
+// createNew.style.fontSize='28px'
+// createNew.className ='text';
+// createNew.innerHTML+=`<a href ="#">click</a>`
+// let body =document.body;
+// body.prepend(createNew)
+// body.append(createImg)
+// console.log(createNew);
 
