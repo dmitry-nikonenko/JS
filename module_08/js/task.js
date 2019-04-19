@@ -96,6 +96,29 @@
 //     span.textContent--
 // }
 // b.addEventListener('click',minus)
+
+// let sub=document.querySelector('button[data-action = "sub"]')
+// let add=document.querySelector('button[data-action = "add"]')
+// let result=document.querySelector('.value')
+
+// class Counter{
+//   constructor(onChange){
+//     this.value = 0;
+//     this.onChange=onChange;
+//   } 
+//   get increment(){this.value++; this.onChange(this.value)}
+//   get decrement(){this.value--; this.onChange(this.value)}
+// }
+
+// function onChange(value) {
+//  result.textContent=value;
+// }
+// let counter = new Counter(onChange)
+
+// sub.addEventListener('click', ()=>counter.decrement)
+// add.addEventListener('click', ()=>counter.increment)
+
+
 //----------------------------------------------------------------------------------------------------------
 /*
   Есть форма с набором радиокнопок. Пользователь выбирает вариант ответа, 
@@ -145,5 +168,174 @@
 */
 
 
-const ul = document.querySelector('ul');
-console.log(ul);
+// let images = document.querySelector('.images');
+// function show(event){
+//   alert(event.target.src)
+// }
+// images.addEventListener('click',show);
+
+//----------------------------------------------------------------------------------------------------------------
+
+/*
+  Дан ul, а внутри него произвольное количество li с текстом и кнопкой. 
+  Сделайте так, чтобы по нажатию на кнопку, удалялся тот li в котором
+  она находится. Обязательно используйте делегирование событий.
+*/
+// let ul = document.querySelector('.list');
+// function removeLi (dima){
+//   if(dima.target.nodeName==="BUTTON"){
+//     dima.target.parentNode.remove()
+//   }
+// }
+// ul.addEventListener('click',removeLi);
+
+
+// const onClickHandler = ({target}) => target.dataset.action === 'delete' ? target.parentNode.remove() : null;
+
+// document.querySelector('.list').addEventListener('click', onClickHandler)
+
+//---------------------------------------------------------------------------------------------------------------
+
+/*
+  Дан набор инпутов. Сделайте так, чтобы при потере фокуса все 
+  инпуты проверяли свое содержимое на правильное количество символов. 
+  
+  - Сколько символов должно быть в инпуте, указывается в атрибуте data-length. 
+  - Если введено подходящее количество, то outline инпута становится зеленым, 
+    если неправильное - красным. Для добавления стилей, на вкладке CSS есть стили valid и invalid
+*/
+
+// let div = document.querySelector('.input-list');
+// function textAlarm (dima){
+//   if(dima.target.value.length !== Number(dima.target.getAttribute('data-length'))){dima.target.classList.add('invalid')}else{dima.target.classList.add('valid')}}
+// div.addEventListener('focusout', textAlarm);
+
+//--------------------------------------------------------------------------------------------------------------
+
+/*
+  Напишите скрипт который:
+    
+    - При фокусе текстового поля, в p.message рендерит строку "Input is in focus!"
+    - При наборе текста в инпуте (событие input), текущее его значение должно 
+      отображаться в p.input-value 
+*/
+
+// const onFocusInHandler = (evt) => document.querySelector('.message').innerHTML = "Input is in focus!";
+// const onFocusOutHadler = (evt) => document.querySelector('.message').innerHTML = "";
+// const getInputValue = ({target}) => document.querySelector('.input-value').innerHTML = `Current input value: ${target.value}`;
+
+// document.querySelector('.input').addEventListener('focusin', onFocusInHandler);
+// document.querySelector('.input').addEventListener('focusout', onFocusOutHadler);
+// document.querySelector('.input').addEventListener('input', getInputValue);
+
+
+// let message = document.querySelector('.message');
+// let input = document.querySelector('.input');
+// let inputValue = document.querySelector('.input-value');
+
+// function addOn(){
+//   message.innerHTML='Input is in focus!'
+// }
+// function addOut(){
+//   inputValue.innerHTML= `Current input value: ${input.value}` 
+// }
+
+
+// input.addEventListener('focusin', addOn);
+// input.addEventListener('input', addOut);
+
+//----------------------------------------------------------------------------------------------------------------
+
+/*
+  На вкладках HTML и CSS уже готовая верстка модального окна.
+  По умолчанию модальное окно скрыто классом modal-hidden.
+  
+  Напишите скрипт который реализует следующее поведение:
+ 
+  - При клике на кнопке с надписью "Open Modal", модальное окно с классом modal, 
+    должно появляться. Для этого необходимо убрать класс modal-hidden. 
+    Для выбора модального модального окна используйте класс js-modal-backdrop
+ 
+  - При открытом модальном окне, клик на кнопку с крестиком (data-action="close-modal")
+    или на серый фон с прозрачностью (js-modal-backdrop), модальное окно должно закрываться.
+*/
+
+
+// const onModalHandler = (evt) => {
+//   evt.preventDefault();
+//   const {dataset, classList} = evt.target;
+//   if (dataset.action === 'open-modal') {
+//     return document.querySelector('.js-modal-backdrop').classList.remove('modal-hidden');
+//   } 
+//   if(dataset.action === 'close-modal' || classList.contains('js-modal-backdrop')) {
+//     return evt.target.closest('.js-modal-backdrop').classList.add('modal-hidden');
+//   }
+// }
+
+// document.addEventListener('click', onModalHandler);
+
+// let btn = document.querySelector('.btn');
+// let js = document.querySelector('.js-modal-backdrop');
+// let close = document.querySelector('.close-btn');
+// let modal = document.querySelector('.modal');
+
+// function remove(){
+//   js.classList.remove('modal-hidden')}
+//   btn.addEventListener('click', remove);
+ 
+//   function add(ev){
+    // if(ev.target ===modal||ev.target===close)
+//     js.classList.add('modal-hidden') 
+//   }
+//   close.addEventListener('click', add); 
+//   modal.addEventListener('click', add);
+
+//---------------------------------------------------------------------------------------------------------------
+
+/*
+  Ознакомьтесь с HTML и CSS.
+  
+  Есть меню навигации, необходимо написать скрипт, который
+  при клике на пункт меню добавит ему класс active,
+  таким образом выделив текущую (активную) ссылку,
+  при этом убрав его у всех остальных элементов меню.
+  
+  Пунктов меню может быть произвольное количество, используйте
+  прием делегирование событий. Учтите клик по самому ul, его
+  необходимо игнорировать.
+  
+  При клике по ссылкам не должна перезагружаться страница!
+*/
+
+// const setActiveLink = (nextActive) => {
+//   const currentActive = document.querySelector('a.active');
+//   if (currentActive) {
+//     currentActive.classList.remove('active')
+//   }
+//   return nextActive.classList.add('active');
+//  }
+
+// const onClickHandler = (evt) => {
+//   evt.preventDefault();
+//   if (evt.target.nodeName !== 'A') return;
+//   return setActiveLink(evt.target);
+// }
+
+// document.querySelector('.js-menu').addEventListener('click', onClickHandler)
+
+
+// let li = document.querySelectorAll('.menu-item > a');
+// let ul = document.querySelector('.menu');
+
+// function activate(ev){if(ev.target.nodeName === 'A'){
+//   li.forEach(el => el.classList.remove('active'));
+//   ev.target.classList.add('active')}
+// }
+// ul.addEventListener('click',activate)
+
+
+
+
+
+
+
