@@ -390,7 +390,7 @@
 */
 
 const galleryItems = [
-  { preview: '/image/1.jpg', fullview: '/image/1-2.jpg', alt: "alt text 1" },
+  { preview: '/image/1.jpg', fullview: '/image/1-2.jpg', alt: "alt text 1"},
   { preview: '/image/2.jpg', fullview: '/image/2-1.jpg', alt: "alt text 2" },
   { preview: '/image/3.jpg', fullview: '/image/3-1.jpg', alt: "alt text 3" },
   { preview: '/image/4.jpg', fullview: '/image/4-1.jpg', alt: "alt text 4" },
@@ -490,7 +490,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function showFullviewImage({ fullview }) {
     const fullviewGalleryItem = `                                                                                                                                                                       
       <div class="fullview-item">
-        <img class="fullview-img" src="${fullview}" alt="new york">
+        <img class="fullview-img" src="${fullview}" alt="new york " width="1280px" height="600px">
       </div> 
     `;
 
@@ -507,7 +507,9 @@ document.addEventListener("DOMContentLoaded", () => {
       <li class="preview-item"><img class="preview-img" 
                                     src="${preview}"
                                     data-fullview="${fullview}"
-                                    alt="${alt}">
+                                    alt="${alt}" 
+                                    width="200px" 
+                                    >
       </li>`,
       ""
     )} 
