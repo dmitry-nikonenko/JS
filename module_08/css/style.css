@@ -454,3 +454,11 @@ body {
 } */
 
 /* ---------------------------------------------------------------------------------------- */
+
+ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  width: 1000px;
+}
