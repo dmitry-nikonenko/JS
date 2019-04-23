@@ -186,25 +186,40 @@
  * и значением "Некорректный ввод!".
 */
 
-const DELAY = 1000;
-const quantity = 100;
+// const DELAY = 1000;
+// const quantity = 100;
 
-// Вызовы функции для проверки
-processOrder(50)
-  .then(console.log) // Ваш заказ готов!
-  .catch(console.log);
+// function processOrder (value){ 
+// const promise = new Promise((resolve,reject)=>{
+//   setTimeout (function(){
+//       if(typeof value === "number"){
+//       value <= quantity ?resolve('Ваш заказ готов!') : reject('К сожалению на складе недостаточно товаров!')
+//       }else{
+//           console.log('Некорректный ввод!');
+//       }
+//   },500)
+// })
 
-processOrder(50)
-  .then(console.log) // Ваш заказ готов!
-  .catch(console.log);
+// return promise
 
-processOrder(500)
-  .then(console.log) // К сожалению на складе недостаточно товаров!
-  .catch(console.log);
+// }
 
-processOrder("lorem")
-  .then(console.log)
-  .catch(console.log); // Некорректный ввод!
+// // Вызовы функции для проверки
+// processOrder(50)
+//   .then(console.log) // Ваш заказ готов!
+//   .catch(console.log);
+
+// processOrder(50)
+//   .then(console.log) // Ваш заказ готов!
+//   .catch(console.log);
+
+// processOrder(500)
+//   .then(console.log) // К сожалению на складе недостаточно товаров!
+//   .catch(console.log);
+
+// processOrder("lorem")
+//   .then(console.log)
+//   .catch(console.log); // Некорректный ввод!
 
 
 
@@ -278,113 +293,113 @@ processOrder("lorem")
   Где parent* это существующий DOM-узел. 
 */
 
-// class Stopwatch {
-//   constructor(link) {
-//     this.link = link;
-//     this.isActive = false;
-//     this.startTime = null;
-//     this.timerID = null;
-//     this.pauseTime = null;
-//     this.delta = null;
-//     this.curentTime = null;
-//     this.ms = null;
-//     this.sec = null;
-//     this.min = null;
-//     this.arrLaps =[];
-//     this.length = null;
-//     this.html = '';
-//     this.li = '';
-//     this.createHtml(link);
+class Stopwatch {
+  constructor(link) {
+    this.link = link;
+    this.isActive = false;
+    this.startTime = null;
+    this.timerID = null;
+    this.pauseTime = null;
+    this.delta = null;
+    this.curentTime = null;
+    this.ms = null;
+    this.sec = null;
+    this.min = null;
+    this.arrLaps =[];
+    this.length = null;
+    this.html = '';
+    this.li = '';
+    this.createHtml(link);
     
-//     this.btnStart = document.querySelector(`.${this.link.className} .js-start`);
-//     this.btnStop = document.querySelector(`.${this.link.className}.js-stop`);
-//     this.timeInterface = document.querySelector(`.${this.link.className} .js-time`);
-//     this.btnReset = document.querySelector(`.${this.link.className} .js-reset`);
-//     this.btnLaps = document.querySelector(`.${this.link.className} .js-take-lap`);
-//     this.listLaps = document.querySelector(`.${this.link.className} .js-laps`);
+    this.btnStart = document.querySelector(`.${this.link.className} .js-start`);
+    this.btnStop = document.querySelector(`.${this.link.className}.js-stop`);
+    this.timeInterface = document.querySelector(`.${this.link.className} .js-time`);
+    this.btnReset = document.querySelector(`.${this.link.className} .js-reset`);
+    this.btnLaps = document.querySelector(`.${this.link.className} .js-take-lap`);
+    this.listLaps = document.querySelector(`.${this.link.className} .js-laps`);
 
-//     this.btnLaps.addEventListener('click', this.addLaps.bind(this));
-//     this.btnReset.addEventListener('click', this.reset.bind(this));
-//     this.btnStart.addEventListener('click', this.timer.bind(this));
-//   }
+    this.btnLaps.addEventListener('click', this.addLaps.bind(this));
+    this.btnReset.addEventListener('click', this.reset.bind(this));
+    this.btnStart.addEventListener('click', this.timer.bind(this));
+  }
 
-//   createHtml(link) {
-//     this.html = `
-//     <div class="${this.link.className}">
-//         <p class="time js-time">00:00.0</p>
-//         <button class="btn js-start">Start</button>
-//         <button class="btn js-take-lap">Lap</button>
-//         <button class="btn js-reset" disabled>Reset</button>
-//       </div>
-//     <ul class="laps js-laps"></ul>
-//     `
-//     link.insertAdjacentHTML('afterbegin', this.html);
-//   }
-//   timer() {
-//     if(!this.isActive) {
-//       this.start();
-//     } else {
-//       this.stop();
-//     } 
-//   }
-//   start() {
-//     this.isActive = true;
-//     this.btnReset.removeAttribute('disabled');
-//     this.startTime = Date.now() - this.pauseTime;
+  createHtml(link) {
+    this.html = `
+    <div class="${this.link.className}">
+        <p class="time js-time">00:00.0</p>
+        <button class="btn js-start">Start</button>
+        <button class="btn js-take-lap">Lap</button>
+        <button class="btn js-reset" disabled>Reset</button>
+      </div>
+    <ul class="laps js-laps"></ul>
+    `
+    link.insertAdjacentHTML('afterbegin', this.html);
+  }
+  timer() {
+    if(!this.isActive) {
+      this.start();
+    } else {
+      this.stop();
+    } 
+  }
+  start() {
+    this.isActive = true;
+    this.btnReset.removeAttribute('disabled');
+    this.startTime = Date.now() - this.pauseTime;
 
-//     this.timerID = setInterval(() =>  {
+    this.timerID = setInterval(() =>  {
       
-//       this.curentTime = Date.now();
-//       this.delta = new Date(this.curentTime - this.startTime);
+      this.curentTime = Date.now();
+      this.delta = new Date(this.curentTime - this.startTime);
 
-//       this.ms = Math.floor(this.delta.getMilliseconds()/100);
-//       this.sec = this.delta.getSeconds();
-//       this.min = this.delta.getMinutes();
+      this.ms = Math.floor(this.delta.getMilliseconds()/100);
+      this.sec = this.delta.getSeconds();
+      this.min = this.delta.getMinutes();
 
-//       this.min = this.min < 10 ? '0' + this.min : this.min;
-//       this.sec = this.sec < 10 ? '0' + this.sec : this.sec;
+      this.min = this.min < 10 ? '0' + this.min : this.min;
+      this.sec = this.sec < 10 ? '0' + this.sec : this.sec;
         
-//       this.timeInterface.textContent = `${this.min}:${this.sec}.${this.ms}`;
-//       this.pauseTime = this.delta;
-//     },100);
-//     this.btnStart.textContent = 'Pause';
-//   }
-//   stop() {
-//     this.isActive = false;
-//     this.btnStart.textContent = 'Continue';
-//     clearTimeout(this.timerID);
-//   }
-//   reset() {
-//   clearTimeout(this.timerID);
-//   this.isActive = false;
-//   this.startTime = null;
-//   this.pauseTime = null;
-//   this.btnStart.textContent ='Start';
-//   this.timeInterface.textContent = '00:0.0';
-//   this.btnReset.setAttribute('disabled','disabled');
-//   this.listLaps.innerHTML = `<ul class="laps js-laps"></ul>`;  
-//   }
-//   addLaps() {
-//     this.arrLaps.push(this.delta);
-//     this.length = this.arrLaps.length;
+      this.timeInterface.textContent = `${this.min}:${this.sec}.${this.ms}`;
+      this.pauseTime = this.delta;
+    },100);
+    this.btnStart.textContent = 'Pause';
+  }
+  stop() {
+    this.isActive = false;
+    this.btnStart.textContent = 'Continue';
+    clearTimeout(this.timerID);
+  }
+  reset() {
+  clearTimeout(this.timerID);
+  this.isActive = false;
+  this.startTime = null;
+  this.pauseTime = null;
+  this.btnStart.textContent ='Start';
+  this.timeInterface.textContent = '00:0.0';
+  this.btnReset.setAttribute('disabled','disabled');
+  this.listLaps.innerHTML = `<ul class="laps js-laps"></ul>`;  
+  }
+  addLaps() {
+    this.arrLaps.push(this.delta);
+    this.length = this.arrLaps.length;
 
-//     this.ms = Math.floor(this.arrLaps[this.length-1].getMilliseconds()/100);
-//     this.sec = this.arrLaps[this.length-1].getSeconds();
-//     this.min = this.arrLaps[this.length-1].getMinutes();
+    this.ms = Math.floor(this.arrLaps[this.length-1].getMilliseconds()/100);
+    this.sec = this.arrLaps[this.length-1].getSeconds();
+    this.min = this.arrLaps[this.length-1].getMinutes();
 
-//     this.min = this.min < 10 ? '0' + this.min : this.min;
-//     this.sec = this.sec < 10 ? '0' + this.sec : this.sec;
-//     this.li = `<li>${this.min}:${this.sec}.${this.ms}</li>`;
-//     this.listLaps.insertAdjacentHTML('afterbegin', this.li);
-//   }
+    this.min = this.min < 10 ? '0' + this.min : this.min;
+    this.sec = this.sec < 10 ? '0' + this.sec : this.sec;
+    this.li = `<li>${this.min}:${this.sec}.${this.ms}</li>`;
+    this.listLaps.insertAdjacentHTML('afterbegin', this.li);
+  }
 
-// }
+}
 
-// const link2 = document.querySelector('.stopwatch2');
-// const stopwatch2 = new Stopwatch(link2);
+const link2 = document.querySelector('.stopwatch2');
+const stopwatch2 = new Stopwatch(link2);
 
-// const link3 = document.querySelector('.stopwatch3');
-// const stopwatch3 = new Stopwatch(link3);
+const link3 = document.querySelector('.stopwatch3');
+const stopwatch3 = new Stopwatch(link3);
 
-// const link4 = document.querySelector('.stopwatch4');
-// const stopwatch4 = new Stopwatch(link4);
+const link4 = document.querySelector('.stopwatch4');
+const stopwatch4 = new Stopwatch(link4);
