@@ -1,0 +1,21 @@
+body{
+    width: 1300px;
+    display: flex;
+    flex-direction: row;
+}
+div{
+    width: 400px;
+}
+h1{
+    color: aqua
+}
+
+p{
+    font-size: 30px;
+    line-height: 0;
+}
+img{
+    width: 400px;
+
+}
+
