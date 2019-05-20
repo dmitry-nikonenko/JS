@@ -116,7 +116,7 @@
 
 //   };
 //   static getSpecs(el) {
-//     console.log(`speed${el.speed},${el.speed},${el.maxSpeed},${el.distance}`);
+//     console.log(`${el.speed},${el.running},${el.maxSpeed},${el.distance}`);
   
 // }
 

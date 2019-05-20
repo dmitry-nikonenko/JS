@@ -634,8 +634,30 @@ console.log(getTotalBalance(users)); // 20916
 //  * Массив имен всех пользователей у которых есть друг с указанным именем
 //  */
 const getUsersByFriend = (users, name) => users.filter(el=> el.friends.includes(name));
-;
+
 
 console.log(getUsersByFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
 console.log(getUsersByFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
+
+// ⚠️ ЗАДАНИЕ ПОВЫШЕННОЙ СЛОЖНОСТИ - ВЫПОЛНЯТЬ ПО ЖЕЛАНИЮ
+// */
+                                         
+/**
+* Получить массив всех скиллов всех пользователей (поле skills), при этом не должно быть
+* повторяющихся скиллов и они должны быть отсортированы в алфавитном порядке
+*/
+const getAllUniqueSkills = (arr) => users.reduce((acc,el)=>acc+=el.skills,[]).split(",").sort();
+
+
+console.log(getAllUniqueSkills(users));
+// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
+
+                             
+/**
+* Массив имен (поле name) людей, отсортированных в зависимости от количества их друзей (поле friends)
+*/
+// const getUserNamesSortedByFriendsCount = arr => {...};
+
+// console.log(getUserNamesSortedByFriendsCount(users)); 
+// // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
 
